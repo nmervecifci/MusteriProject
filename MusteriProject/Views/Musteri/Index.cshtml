@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MusteriProject.Models.Musteri> 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Listesi</title>
+</head>
+<body>
+    <h2>Müşteri Listesi</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Müşteri ID</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var musteri in Model)
+            {
+                <tr>
+                    <td>@musteri.ID</td>
+                    <td>@musteri.Email</td>
+                    <td>@musteri.Password</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

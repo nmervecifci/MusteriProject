@@ -1,0 +1,37 @@
+﻿<!-- Views/Musteri/Create.cshtml -->
+@model MusteriProject.Models.Musteri
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Kaydı</title>
+</head>
+<body>
+    <h2>Müşteri Kaydı</h2>
+
+    @using (Html.BeginForm("Create", "Musteri", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label asp-for="Email">E-posta:</label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div>
+            <label asp-for="Password">Şifre:</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div>
+            <button type="submit">Kaydet</button>
+        </div>
+    }
+
+    <div>
+        <a asp-action="Index" asp-controller="Home">Anasayfa</a>
+    </div>
+</body>
+</html>
